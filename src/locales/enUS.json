@@ -1,1 +1,6 @@
-{}
+{
+    "sider": {
+        "home": "Home",
+        "settings": "Settings"
+    }
+}
