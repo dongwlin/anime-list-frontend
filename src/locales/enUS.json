@@ -2,5 +2,17 @@
     "sider": {
         "home": "Home",
         "settings": "Settings"
+    },
+    "page": {
+        "home": {
+            "title": "Home"
+        },
+        "settings": {
+            "title": "Settings"
+        },
+        "not_found": {
+            "title": "404 Not Found",
+            "description": "Sorry, the page you visited does not exist."
+        }
     }
 }

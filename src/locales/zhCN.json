@@ -2,5 +2,17 @@
     "sider": {
         "home": "首页",
         "settings": "设置"
+    },
+    "page": {
+        "home": {
+            "title": "首页"
+        },
+        "settings": {
+            "title": "设置"
+        },
+        "not_found": {
+            "title": "404 未找到",
+            "description": "抱歉，您访问的页面不存在。"
+        }
     }
 }
