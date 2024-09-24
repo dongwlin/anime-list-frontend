@@ -61,7 +61,7 @@ const expandIcon = (option: MenuOption) => {
 </script>
 
 <template>
-  <n-layout-sider bordered collapse-mode="width" :width="240" show-trigger @collapse="perferenceStore.siderCollapse" @expand="perferenceStore.siderExpand">
+  <n-layout-sider bordered collapse-mode="width" :width="240" show-trigger :collapsed="perferenceStore.collapsed" @collapse="perferenceStore.siderCollapse" @expand="perferenceStore.siderExpand">
     <n-menu :collapsed="perferenceStore.collapsed" :options="menuOptions" :expand-icon="expandIcon" :value="selected" :on-update:value="handleSelected"/>
   </n-layout-sider>
 </template>
