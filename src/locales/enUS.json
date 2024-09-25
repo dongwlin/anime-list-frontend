@@ -8,7 +8,11 @@
             "title": "Home"
         },
         "settings": {
-            "title": "Settings"
+            "title": "Settings",
+            "content": {
+                "dark_mode": "Dark Mode",
+                "language": "Language"
+            }
         },
         "not_found": {
             "title": "404 Not Found",
