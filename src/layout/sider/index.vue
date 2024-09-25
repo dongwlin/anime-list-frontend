@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import {MenuOption, NLayoutSider, NMenu} from 'naive-ui'
+import { MenuOption, NIcon, NLayoutSider, NMenu } from 'naive-ui'
 import options from './options'
-import { h, ref } from 'vue'
+import { Component, h, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from '@/i18n'
 import { usePerferenceStore } from '@/store'
 
-const {t} = useI18n()
+const { t } = useI18n()
 const perferenceStore = usePerferenceStore()
 
 const processHash = (hash: string): string[] => {
@@ -22,15 +22,15 @@ const processHash = (hash: string): string[] => {
 
 const selected = ref<string>(processHash(location.hash)[0])
 
-const rederIcon = (icon: string) => {
-  return () => h('div', { class: icon })
+const rederIcon = (icon: Component) => {
+  return () => h(NIcon, null, { default: () => h(icon) })
 }
 
 const handleSelected = (key: string, _: MenuOption) => {
   selected.value = key
 }
 
-const menuOptions : MenuOption[] = []
+const menuOptions: MenuOption[] = []
 for (const option of options) {
   menuOptions.push({
     label: () => h(
@@ -50,22 +50,17 @@ for (const option of options) {
 const expandIcon = (option: MenuOption) => {
   const menu = options.find(value => value.key === option.key)
   if (menu) {
-    return h(
-      'div',
-      {
-        class: menu.icon
-      }
-    )
+    return h(NIcon, null, { default: () => h(menu.icon)})
   }
 }
 </script>
 
 <template>
-  <n-layout-sider bordered collapse-mode="width" :width="240" show-trigger :collapsed="perferenceStore.collapsed" @collapse="perferenceStore.siderCollapse" @expand="perferenceStore.siderExpand">
-    <n-menu :collapsed="perferenceStore.collapsed" :options="menuOptions" :expand-icon="expandIcon" :value="selected" :on-update:value="handleSelected"/>
+  <n-layout-sider bordered collapse-mode="width" :width="240" show-trigger :collapsed="perferenceStore.collapsed"
+    @collapse="perferenceStore.siderCollapse" @expand="perferenceStore.siderExpand">
+    <n-menu :collapsed="perferenceStore.collapsed" :options="menuOptions" :expand-icon="expandIcon" :value="selected"
+      :on-update:value="handleSelected" />
   </n-layout-sider>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

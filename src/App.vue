@@ -32,7 +32,6 @@ const dateLocale = computed(() => {
 
 <template>
   <n-config-provider class="h-full" :theme="theme" :locale="locale" :date-locale="dateLocale">
-    <div v-if="false" class="i-carbon-home i-carbon-task i-carbon-settings"></div>
     <Layout class="h-full">
       <router-view />
     </Layout>

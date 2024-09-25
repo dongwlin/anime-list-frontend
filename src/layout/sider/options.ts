@@ -1,19 +1,22 @@
+import { Home, Settings } from '@vicons/carbon'
+import { Component } from 'vue'
+
 type Option = {
   key: string
   to: string
-  icon: string
+  icon: Component
 }
 
 const options: Option[] = [
   {
     key: 'home',
     to: '/home',
-    icon: 'i-carbon-home'
+    icon: Home
   },
   {
     key: 'settings',
     to: '/settings',
-    icon: 'i-carbon-settings'
+    icon: Settings
   }
 ]
 
